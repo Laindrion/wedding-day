@@ -42,7 +42,7 @@ a {
 }
 
 body {
-   font-family: "Playfair Display", serif;
+   font-family: 'Calmius';
    font-size: 16px;
    letter-spacing: 2px;
    margin-bottom: 40px;
@@ -80,6 +80,18 @@ body {
 .time-block small {
    font-size: 14px;
    letter-spacing: 1px;
+}
+
+
+
+@font-face {
+   font-family: 'Calmius';
+   src: local('Calmius Extra Bold'), local('Calmius-Extra-Bold'),
+      url('Calmius-ExtraBold.woff2') format('woff2'),
+      url('Calmius-ExtraBold.woff') format('woff'),
+      url('Calmius-ExtraBold.ttf') format('truetype');
+   font-weight: 800;
+   font-style: normal;
 }
 
 @media (max-width: 600px) {}
