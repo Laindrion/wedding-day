@@ -50,48 +50,70 @@ body {
    color: #000;
 }
 
+.main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 .hero {
    min-height: 100vh;
 }
 
-.countdown {
-   text-align: center;
-   max-width: 600px;
-   margin: 80px auto;
-}
-
-.countdown-title {
-   font-size: 16px;
-   letter-spacing: 2px;
-   margin-bottom: 40px;
-}
-
-.countdown-timer {
+.hero-content {
    display: flex;
-   justify-content: space-between;
+
+   img {
+      max-width: 500px;
+      height: auto;
+   }
 }
 
-.time-block span {
-   display: block;
-   font-size: 48px;
-   font-weight: 500;
-}
-
-.time-block small {
-   font-size: 14px;
-   letter-spacing: 1px;
-}
+.hero-text-cover {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 20px;
 
 
+   .countdown {
+      text-align: center;
+      max-width: 600px;
+      margin: 80px auto;
+   }
 
-@font-face {
-   font-family: 'Calmius';
-   src: local('Calmius Extra Bold'), local('Calmius-Extra-Bold'),
-      url('Calmius-ExtraBold.woff2') format('woff2'),
-      url('Calmius-ExtraBold.woff') format('woff'),
-      url('Calmius-ExtraBold.ttf') format('truetype');
-   font-weight: 800;
-   font-style: normal;
-}
+   .countdown-title {
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+   }
 
-@media (max-width: 600px) {}
+   .countdown-timer {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   .time-block span {
+      display: block;
+      font-size: 48px;
+      font-weight: 500;
+   }
+
+   .time-block small {
+      font-size: 14px;
+      letter-spacing: 1px;
+   }
+
+
+
+   @font-face {
+      font-family: 'Calmius';
+      src: local('Calmius Extra Bold'), local('Calmius-Extra-Bold'),
+         url('Calmius-ExtraBold.woff2') format('woff2'),
+         url('Calmius-ExtraBold.woff') format('woff'),
+         url('Calmius-ExtraBold.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+   }
+
+   @media (max-width: 600px) {}
