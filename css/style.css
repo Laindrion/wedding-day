@@ -29,6 +29,25 @@ li {
    padding: 0;
 }
 
+body {
+   font-family: 'Open Sans', Arial, sans-serif;
+   font-size: 16px;
+   font-weight: 300;
+   line-height: 1.5;
+   color: #333;
+   background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Playfair Display', serif;
+   font-weight: 500;
+}
+
 ul,
 li {
    margin: 0;
@@ -41,79 +60,111 @@ a {
    text-decoration: none;
 }
 
-body {
-   font-family: 'Calmius';
-   font-size: 16px;
-   letter-spacing: 2px;
-   margin-bottom: 40px;
-   background: #fff;
-   color: #000;
-}
-
 .main {
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 
+.conatiner {
+   width: 100%;
+   max-width: 1200px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+/* HERO SECTION */
+
 .hero {
+   padding-top: 40px;
    min-height: 100vh;
 }
 
 .hero-content {
-   display: flex;
+   text-align: center;
 
    img {
-      max-width: 500px;
+      max-width: 350px;
+      width: 100%;
       height: auto;
    }
 }
 
 .hero-text-cover {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
    padding: 20px;
 
-
    .countdown {
-      text-align: center;
       max-width: 600px;
       margin: 80px auto;
    }
 
-   .countdown-title {
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
+   p {
+      max-width: 600px;
+      margin: 10px 0;
    }
+}
 
-   .countdown-timer {
-      display: flex;
-      justify-content: space-between;
-   }
+/* COUNTDOWN SECTION */
+.countdown-title {
+   font-size: 16px;
+   letter-spacing: 2px;
+   margin-bottom: 20px;
+   text-align: center;
+}
 
-   .time-block span {
-      display: block;
-      font-size: 48px;
-      font-weight: 500;
-   }
+.time-block {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 5px;
+}
 
-   .time-block small {
-      font-size: 14px;
-      letter-spacing: 1px;
-   }
+.countdown-timer {
+   display: flex;
+   justify-content: space-between;
+   gap: 50px;
+}
+
+.time-block span {
+   display: block;
+   font-size: 51px;
+   font-weight: 300;
+}
+
+.time-block small {
+   font-size: 16px;
+   letter-spacing: 1px;
+}
 
 
+/* FONTS SECTION */
+@font-face {
+   font-family: 'Calmius';
+   src: local('Calmius Extra Bold'), local('Calmius-Extra-Bold'),
+      url('Calmius-ExtraBold.woff2') format('woff2'),
+      url('Calmius-ExtraBold.woff') format('woff'),
+      url('Calmius-ExtraBold.ttf') format('truetype');
+   font-weight: 800;
+   font-style: normal;
+}
 
-   @font-face {
-      font-family: 'Calmius';
-      src: local('Calmius Extra Bold'), local('Calmius-Extra-Bold'),
-         url('Calmius-ExtraBold.woff2') format('woff2'),
-         url('Calmius-ExtraBold.woff') format('woff'),
-         url('Calmius-ExtraBold.ttf') format('truetype');
-      font-weight: 800;
-      font-style: normal;
-   }
+@font-face {
+   font-family: 'Love';
+   src: url('/fonts/Love.otf') format('opentype'),
+      url('/fonts/LoveRegular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
 
-   @media (max-width: 600px) {}
+@font-face {
+   font-family: 'Vallentina';
+   src: url('/fonts/Vallentina.otf') format('opentype'),
+      url('/fonts/VallentinaRegular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {}
