@@ -31,7 +31,7 @@ li {
 
 body {
    font-family: 'Open Sans', Arial, sans-serif;
-   font-size: 16px;
+   font-size: 18px;
    font-weight: 300;
    line-height: 1.5;
    color: #333;
@@ -66,6 +66,10 @@ a {
    align-items: center;
 }
 
+section {
+   padding: 40px 0;
+}
+
 .conatiner {
    width: 100%;
    max-width: 1200px;
@@ -73,11 +77,26 @@ a {
    margin: 0 auto;
 }
 
+.title {
+   text-align: center;
+   font-size: 38px;
+   font-weight: 600;
+   text-transform: uppercase;
+
+   margin-bottom: 40px;
+}
+
 /* HERO SECTION */
 
 .hero {
    padding-top: 40px;
    min-height: 100vh;
+}
+
+.hero-title {
+   font-size: 38px;
+   text-align: center;
+   margin-bottom: 20px;
 }
 
 .hero-content {
@@ -106,10 +125,13 @@ a {
 
 /* COUNTDOWN SECTION */
 .countdown-title {
-   font-size: 16px;
+   font-size: 20px;
+   font-weight: 600;
    letter-spacing: 2px;
    margin-bottom: 20px;
    text-align: center;
+
+   text-transform: uppercase;
 }
 
 .time-block {
@@ -136,6 +158,55 @@ a {
    letter-spacing: 1px;
 }
 
+/* GATHERING SECTION */
+.gathering {
+   padding: 50px 0;
+}
+
+.gathering-content {
+   display: flex;
+   align-items: center;
+   gap: 40px;
+
+   img {
+      display: block;
+      width: 80px;
+      height: auto;
+      margin-bottom: -30px;
+   }
+}
+
+.gathering-time {
+   font-size: 30px;
+   font-weight: 600;
+   margin-bottom: 20px;
+
+   font-family: 'Playfair Display', serif;
+}
+
+/* MAP SECTION */
+.map {
+   text-align: center;
+
+   p {
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+   }
+
+   iframe {
+      max-width: 800px;
+      width: 100%;
+   }
+}
+
+/* DRESS CODE SECTION */
+.dress-code {
+   text-align: center;
+   p {
+      max-width: 500px;
+      margin: 0 auto 30px auto;
+   }
+}
 
 /* FONTS SECTION */
 @font-face {
