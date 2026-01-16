@@ -100,7 +100,7 @@
       </section>
 
       <section class="contacts">
-         <h2>
+         <h2 class="title">
             ПРИСУТСТВИЕ НА ТОРЖЕСТВЕ
          </h2>
          <p>
@@ -110,20 +110,25 @@
             Будем ждать ответ до 20.03.2026 г.
          </p>
          <form action="">
-            <label for="">
+            <label for="name">
                Имя Фамилия:
-               <input type="text">
+               <input type="text" id="name">
             </label>
 
-            <h3>
+            <h3 class="subtitle">
                Сможете ли вы присутствовать на торжестве?
             </h3>
-            <label for="">
-               <input type="radio"> Я приду / Мы придем
+
+            <label for="yes">
+               <input type="radio" name="attendance" id="yes"> Я приду / Мы придем
             </label>
-            <label for="">
-               <input type="radio"> Прийти не получится
+            <label for="no">
+               <input type="radio" name="attendance" id="no"> Прийти не получится
             </label>
+            
+            <button type="submit">
+               Отправить
+            </button>
          </form>
       </section>
 

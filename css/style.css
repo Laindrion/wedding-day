@@ -202,10 +202,95 @@ section {
 /* DRESS CODE SECTION */
 .dress-code {
    text-align: center;
+
    p {
       max-width: 500px;
       margin: 0 auto 30px auto;
    }
+}
+
+/* CONTACTS SECTION */
+.contacts {
+   text-align: center;
+   padding-bottom: 100px;
+
+   p {
+      max-width: 550px;
+      margin: 0 auto 30px auto;
+   }
+
+   .subtitle,
+   label:has(input[type="text"]) {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: left;
+
+      font-family: 'Playfair Display', serif;
+   }
+
+   label:has(input[type="text"]) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+   }
+
+   label:has(input[type="radio"]) {
+      display: flex;
+      gap: 10px;
+   }
+
+   input[type="text"] {
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+
+      font-size: 16px;
+
+      border: none;
+      border-bottom: 1px solid #333;
+
+      width: 100%;
+      outline: none;
+   }
+
+   h3 {
+      text-align: left;
+   }
+
+   button {
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #fff;
+      background-color: #000;
+      border: none;
+      cursor: pointer;
+
+      display: block;
+      margin: 0 auto;
+      margin-top: 40px;
+      text-transform: uppercase;
+   }
+}
+
+/* FOOTER SECTION */
+.footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   padding: 40px 0;
+   text-align: center;
+   width: 100%;
+   height: 100vh;
+
+   color: #fff;
+
+   background-image: url('../images/footer-bg.jpg');
+   background-size: cover;
+   background-position: top;
 }
 
 /* FONTS SECTION */
