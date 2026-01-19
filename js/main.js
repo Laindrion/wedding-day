@@ -1,5 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+
+
+
+
+
+
+
+
    // SET YOUR WEDDING DATE HERE (YYYY-MM-DDTHH:MM:SS)
    const weddingDate = new Date("2026-04-10T18:00:00").getTime();
 
@@ -40,9 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
    updateCountdown();
    const timer = setInterval(updateCountdown, 1000);
-
-
-
 
    if (!window.Motion) {
       console.error("Motion is not loaded");
@@ -125,16 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { once: true }
    );
-
-
-   /* BUTTON HOVER EFFECT */
-   document.querySelector("button").addEventListener("mouseenter", () => {
-      Motion.animate("button", { scale: 1.05 }, { duration: 0.2 });
-   });
-
-   document.querySelector("button").addEventListener("mouseleave", () => {
-      Motion.animate("button", { scale: 1 }, { duration: 0.2 });
-   });
 });
 
 
