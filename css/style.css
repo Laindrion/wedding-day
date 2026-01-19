@@ -70,7 +70,7 @@ section {
    padding: 40px 0;
 }
 
-.conatiner {
+.container {
    width: 100%;
    max-width: 1200px;
    padding: 0 15px;
@@ -173,6 +173,7 @@ section {
       width: 80px;
       height: auto;
       margin-bottom: -30px;
+      float: left;
    }
 }
 
@@ -205,6 +206,7 @@ section {
 
    p {
       max-width: 500px;
+      width: 100%;
       margin: 0 auto 30px auto;
    }
 }
@@ -291,6 +293,32 @@ section {
    background-image: url('../images/footer-bg.jpg');
    background-size: cover;
    background-position: top;
+
+   h2 {
+      font-family: 'Miss Katherine', cursive;
+      font-size: 124px;
+   }
+}
+
+/* ANIMATION SECTION */
+.motion-up {
+   opacity: 0;
+   transform: translateY(40px);
+}
+
+
+.blur-on-scroll {
+   opacity: 0;
+   filter: blur(8px);
+}
+
+/* DECORATION SECTION */
+.decoration-img {
+   display: block;
+   margin: 0 auto;
+
+   max-width: 200px;
+   width: 100%;
 }
 
 /* FONTS SECTION */
@@ -322,5 +350,114 @@ section {
    font-display: swap;
 }
 
+@font-face {
+   font-family: 'Miss Katherine';
+   src: local('/fonts/Miss Katherine'),
+      url('/fonts/Miss_Katherine-Script.otf') format('opentype');
+   font-weight: normal;
+   font-style: normal;
+}
+
 /* MEDIA QUERIES */
-@media (max-width: 600px) {}
+@media (max-width: 870px) {
+   .gathering-content {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 24px;
+      align-items: center;
+      row-gap: 0px;
+   }
+
+   .gathering-time {
+      grid-column: 2;
+      grid-row: 1;
+
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1;
+   }
+
+   .gathering-content p {
+      grid-column: 2;
+      grid-row: 2;
+
+      margin-top: 6px;
+      max-width: 420px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #555;
+   }
+
+   .gathering-content img {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+
+      width: 70px;
+      height: auto;
+      align-self: center;
+   }
+
+   @media (max-width: 630px) {
+      body {
+         font-size: 16px;
+      }
+
+      .time-block span {
+         font-size: 42px;
+      }
+
+      .hero-title {
+         font-size: 32px;
+      }
+
+      .title {
+         font-size: 32px;
+      }
+
+      .gathering-time {
+         font-size: 28px;
+      }
+   }
+
+   @media(max-width: 460px) {
+      .countdown-timer {
+         flex-direction: column;
+         gap: 20px;
+      }
+
+
+      .footer {
+         h2 {
+            font-size: 80px;
+         }
+      }
+   }
+
+   @media((max-width: 330px)) {
+      body {
+         font-size: 14px;
+      }
+
+      .time-block span {
+         font-size: 34px;
+      }
+
+      .hero-title {
+         font-size: 28px;
+      }
+
+      .title {
+         font-size: 28px;
+      }
+
+      .gathering-time {
+         font-size: 24px;
+      }
+
+      .contacts {
+         padding-bottom: 50px;
+      }
+   }
+}
