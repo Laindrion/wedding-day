@@ -90,10 +90,14 @@ section {
    display: block;
    width: 70px;
    height: 70px;
+   z-index: 100;
 
-   img{
+   img {
       width: 100%;
       height: 100%;
+
+      position: relative;
+      z-index: 100;
    }
 
    img:first-child {
@@ -275,6 +279,22 @@ section {
 .time-block small {
    font-size: 16px;
    letter-spacing: 1px;
+}
+
+/* BIG IMAGE SECTION */
+.big-image {}
+
+.big-image-cover {
+   max-width: 100lvh;
+   height: 100lvh;
+
+   padding: 0 15px;
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
 }
 
 /* GATHERING SECTION */
@@ -526,87 +546,95 @@ section {
       align-self: center;
    }
 
-   @media (max-width: 630px) {
-      body {
-         font-size: 16px;
-      }
+   #sound-toggle {
+      right: 5%;
+      top: 30px;
 
-      .time-block span {
-         font-size: 42px;
-      }
+      width: 40px;
+      height: 40px;
+   }
+}
 
-      .hero-title {
-         font-size: 32px;
-      }
-
-      .title {
-         font-size: 32px;
-      }
-
-      .gathering-time {
-         font-size: 28px;
-      }
+@media (max-width: 630px) {
+   body {
+      font-size: 16px;
    }
 
-   @media (max-width: 500px) {
-      .introduction {
-         h1 {
-            font-size: 36px;
-         }
-
-         p {
-            font-size: 24px;
-         }
-      }
+   .time-block span {
+      font-size: 42px;
    }
 
-   @media(max-width: 460px) {
-      .countdown-timer {
-         flex-direction: column;
-         gap: 20px;
-      }
-
-
-      .footer {
-         h2 {
-            font-size: 80px;
-         }
-      }
+   .hero-title {
+      font-size: 32px;
    }
 
-   @media((max-width: 330px)) {
-      body {
-         font-size: 14px;
+   .title {
+      font-size: 32px;
+   }
+
+   .gathering-time {
+      font-size: 28px;
+   }
+}
+
+@media (max-width: 500px) {
+   .introduction {
+      h1 {
+         font-size: 36px;
       }
 
-      .time-block span {
-         font-size: 34px;
-      }
-
-      .hero-title {
-         font-size: 28px;
-      }
-
-      .title {
-         font-size: 28px;
-      }
-
-      .gathering-time {
+      p {
          font-size: 24px;
       }
+   }
+}
 
-      .contacts {
-         padding-bottom: 50px;
+@media(max-width: 460px) {
+   .countdown-timer {
+      flex-direction: column;
+      gap: 20px;
+   }
+
+
+   .footer {
+      h2 {
+         font-size: 80px;
+      }
+   }
+}
+
+@media((max-width: 330px)) {
+   body {
+      font-size: 14px;
+   }
+
+   .time-block span {
+      font-size: 34px;
+   }
+
+   .hero-title {
+      font-size: 28px;
+   }
+
+   .title {
+      font-size: 28px;
+   }
+
+   .gathering-time {
+      font-size: 24px;
+   }
+
+   .contacts {
+      padding-bottom: 50px;
+   }
+
+   .introduction {
+      h1 {
+         font-size: 32px;
       }
 
-      .introduction {
-         h1 {
-            font-size: 32px;
-         }
-
-         p {
-            font-size: 20px;
-         }
+      p {
+         font-size: 20px;
       }
    }
 }
