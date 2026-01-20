@@ -1,15 +1,50 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+   /* INTRODUCTION SECTION */
+   const introSection = document.querySelector(".introduction");
+   const htmlElement = document.documentElement;
+   const music = document.getElementById("music");
 
+   function removeSection(sectionName) {
 
+      const introBtn = document.getElementById("open");
 
+      introBtn.addEventListener("click", () => {
+         sectionName.classList.remove("active");
+         htmlElement.classList.remove("active");
+         // Play music when the intro section is removed
+         music.play().catch((error) => {
+            console.warn("Autoplay failed:", error);
+         });
+      });
+   }
 
+   removeSection(introSection);
 
+   function toggleSound() {
+      const soundToggle = document.getElementById("sound-toggle");
+      const soundOnIcon = soundToggle.children[0];
+      const soundOffIcon = soundToggle.children[1];
 
+      soundToggle.addEventListener("click", (e) => {
+         e.preventDefault();
+         if (music.paused) {
+            music.play().catch((error) => {
+               console.warn("Autoplay failed:", error);
+            });
+            soundOnIcon.style.display = "none";
+            soundOffIcon.style.display = "block";
+         } else {
+            music.pause();
+            soundOnIcon.style.display = "block";
+            soundOffIcon.style.display = "none";
+         }
+      });
+   }
 
+   toggleSound();
 
-
-
+   /* WEDDING DATE SECTION */
    // SET YOUR WEDDING DATE HERE (YYYY-MM-DDTHH:MM:SS)
    const weddingDate = new Date("2026-04-10T18:00:00").getTime();
 
@@ -57,6 +92,24 @@ document.addEventListener("DOMContentLoaded", () => {
    }
 
    Motion.inView(
+      ".fade",
+      ({ target }) => {
+         Motion.animate(
+            target,
+            { opacity: [0, 1], y: [40, 0] },
+            {
+               duration: 1,
+               easing: "ease-out"
+            }
+         );
+      },
+      {
+         amount: 0.3,
+         once: true
+      }
+   );
+
+   Motion.inView(
       ".motion-up",
       ({ target }) => {
          Motion.animate(
@@ -95,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    /* SCALE + FADE */
    Motion.inView(
-      ".gathering",
+      ".gathering, .scale-fade",
       ({ target }) => {
          Motion.animate(
             target,
@@ -122,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    /* DRESS CODE ANIMATION */
    Motion.inView(
-      ".dress-code",
+      ".dress-code, .left-fade",
       ({ target }) => {
          Motion.animate(
             target,
@@ -153,3 +206,4 @@ form.addEventListener("submit", (e) => {
    form.reset();
    alert("Спасибо! Ваш ответ отправлен.");
 });
+

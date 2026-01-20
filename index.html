@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="active">
 
 <head>
    <meta charset="UTF-8">
@@ -12,19 +12,28 @@
 </head>
 
 <body>
+   <audio class="music" id="music">
+      <source src="music/BrunoMars.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+   </audio>
+
+   <a id="sound-toggle" href="#">
+      <img src="images/sound-on.svg" alt="Sound on">
+      <img src="images/sound-mute.svg" alt="Sound off">
+   </a>
    <main class="main">
-      <section class="introduction">
-         <div class="introduction-image">
+      <section class="introduction active">
+         <div class="introduction-image scale-fade">
             <img src="images/introduction.jpg" alt="">
          </div>
          <div class="container">
-            <h1>
+            <h1 class="motion-up">
                Приглашение на свадьбу
             </h1>
-            <p>
+            <p class="motion-up">
                14.02.26
             </p>
-            <a href="#" id="open">
+            <a class="motion-up" id="open" href="#">
                Открыть
             </a>
          </div>
