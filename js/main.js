@@ -200,25 +200,44 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { once: true }
    );
-});
 
 
-/* SUBMIT FORM */
-const form = document.getElementById("guest-form");
+   /* SUBMIT FORM */
+   const form = document.getElementById("guest-form");
 
-form.addEventListener("submit", (e) => {
-   e.preventDefault();
+   form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-   const data = new FormData(form);
+      const data = new FormData(form);
 
-   fetch("https://docs.google.com/forms/d/e/1FAIpQLSeOdvsMuTkubgBteVV_fT9BJI4hfabuWHsV8Rf_Ap10Kgrn8g/formResponse", {
-      method: "POST",
-      body: data,
-      mode: "no-cors",
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSeOdvsMuTkubgBteVV_fT9BJI4hfabuWHsV8Rf_Ap10Kgrn8g/formResponse", {
+         method: "POST",
+         body: data,
+         mode: "no-cors",
+      });
+
+      // With no-cors we can't read the response, so we show success immediately:
+      form.reset();
+      alert("Спасибо! Ваш ответ отправлен.");
    });
 
-   // With no-cors we can't read the response, so we show success immediately:
-   form.reset();
-   alert("Спасибо! Ваш ответ отправлен.");
+
+   const iframe = document.querySelector(".map iframe");
+   const fallback = document.querySelector(".map-fallback");
+   if (!iframe || !fallback) return;
+
+   fallback.style.display = "none";
+
+   let loaded = false;
+   iframe.addEventListener("load", () => {
+      loaded = true;
+   });
+
+   setTimeout(() => {
+      if (!loaded) fallback.style.display = "block";
+   }, 2500);
+
 });
+
+
 
