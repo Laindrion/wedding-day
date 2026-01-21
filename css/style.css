@@ -98,6 +98,8 @@ section {
 
       position: relative;
       z-index: 100;
+
+      filter: contrast(0.5);
    }
 
    img:first-child {
@@ -244,6 +246,10 @@ section {
 }
 
 /* COUNTDOWN SECTION */
+.wedding-day {
+   padding-bottom: 10px;
+}
+
 .countdown-title {
    font-size: 20px;
    font-weight: 600;
@@ -279,7 +285,9 @@ section {
 }
 
 /* BIG IMAGE SECTION */
-.big-image {}
+.big-image {
+   padding-top: 0px;
+}
 
 .big-image-cover {
    max-width: 100lvh;
