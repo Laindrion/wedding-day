@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const introSection = document.querySelector(".introduction");
    const htmlElement = document.documentElement;
    const music = document.getElementById("music");
+   const soundToggle = document.getElementById("sound-toggle");
 
    function removeSection(sectionName) {
 
@@ -22,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
    removeSection(introSection);
 
    function toggleSound() {
-      const soundToggle = document.getElementById("sound-toggle");
       const soundOnIcon = soundToggle.children[0];
       const soundOffIcon = soundToggle.children[1];
 
@@ -42,6 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   function stopMusicWhileTabSwitch() {
+      // Pause when user leaves the tab
+      document.addEventListener("visibilitychange", () => {
+         if (document.hidden) {
+            music.pause();
+            const soundOnIcon = soundToggle.children[0];
+            const soundOffIcon = soundToggle.children[1];
+
+            soundOnIcon.style.display = "block";
+            soundOffIcon.style.display = "none";
+         }
+      });
+   };
+
+   stopMusicWhileTabSwitch();
    toggleSound();
 
    /* WEDDING DATE SECTION */
