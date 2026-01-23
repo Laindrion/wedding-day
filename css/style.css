@@ -127,6 +127,7 @@ section {
       line-height: 1.2;
       letter-spacing: 3px;
       text-transform: uppercase;
+      text-shadow: 3px 1px 9px BLACK;
    }
 
    p {
@@ -134,6 +135,7 @@ section {
       margin: 20px 0;
       letter-spacing: 2px;
       font-weight: 400;
+      text-shadow: 3px 1px 9px BLACK;
    }
 }
 
@@ -204,6 +206,10 @@ section {
    transition: all 0.3s ease;
    letter-spacing: 2px;
    color: #fff;
+
+   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
    &:hover {
       background-color: #fff;
