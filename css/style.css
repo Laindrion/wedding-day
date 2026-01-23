@@ -365,6 +365,7 @@ section {
 /* DRESS CODE SECTION */
 .dress-code {
    text-align: center;
+   padding: 0;
 
    p {
       max-width: 500px;
