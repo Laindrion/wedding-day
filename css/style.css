@@ -84,7 +84,7 @@ section {
 #sound-toggle {
    position: fixed;
    right: 15%;
-   top: 50px;
+   bottom: 50px;
 
 
    display: block;
@@ -572,7 +572,7 @@ section {
 
    #sound-toggle {
       right: 5%;
-      top: 30px;
+      bottom: 30px;
 
       width: 40px;
       height: 40px;
