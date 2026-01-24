@@ -577,6 +577,13 @@ section {
       width: 40px;
       height: 40px;
    }
+
+
+   .hero {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      /*   min-height: 100vh; */
+   }
 }
 
 @media (max-width: 670px) {
