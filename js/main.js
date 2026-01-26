@@ -59,9 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
    stopMusicWhileTabSwitch();
    toggleSound();
 
-   /* WEDDING DATE SECTION */
+   /*** WEDDING DATE SECTION ***/
    // SET YOUR WEDDING DATE HERE (YYYY-MM-DDTHH:MM:SS)
-   const weddingDate = new Date("2026-04-10T18:00:00").getTime();
+   const weddingDateDefault = new Date("2026-04-10T18:00:00").getTime();
+   const weddingDateAz = new Date("2026-03-22T18:00:00").getTime();
+
+   // Check if az page exists
+   const azPage = document.getElementById("az");
+
+   // Pick the correct wedding date
+   const weddingDate = azPage ? weddingDateAz : weddingDateDefault;
 
    const daysEl = document.getElementById("days");
    const hoursEl = document.getElementById("hours");
@@ -101,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
    updateCountdown();
    const timer = setInterval(updateCountdown, 1000);
 
+   /* MOTION SECTION */
    if (!window.Motion) {
       console.error("Motion is not loaded");
       return;
@@ -210,11 +218,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = new FormData(form);
 
-      fetch("https://docs.google.com/forms/d/e/1FAIpQLSeOdvsMuTkubgBteVV_fT9BJI4hfabuWHsV8Rf_Ap10Kgrn8g/formResponse", {
-         method: "POST",
-         body: data,
-         mode: "no-cors",
-      });
+      if (azPage) {
+         fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcFWvWGdsrKae_uDqJFNw3oJzeTtS-xfAuV31WWdodlSH2PA/formResponse", {
+            method: "POST",
+            body: data,
+            mode: "no-cors",
+         });
+      } else {
+         fetch("https://docs.google.com/forms/d/e/1FAIpQLSeOdvsMuTkubgBteVV_fT9BJI4hfabuWHsV8Rf_Ap10Kgrn8g/formResponse", {
+            method: "POST",
+            body: data,
+            mode: "no-cors",
+         });
+      }
 
       // With no-cors we can't read the response, so we show success immediately:
       form.reset();
