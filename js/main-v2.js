@@ -236,23 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
       alert("Спасибо! Ваш ответ отправлен.");
    });
-
-
-   const iframe = document.querySelector(".map iframe");
-   const fallback = document.querySelector(".map-fallback");
-   if (!iframe || !fallback) return;
-
-   fallback.style.display = "none";
-
-   let loaded = false;
-   iframe.addEventListener("load", () => {
-      loaded = true;
-   });
-
-   setTimeout(() => {
-      if (!loaded) fallback.style.display = "block";
-   }, 2500);
-
 });
 
 
