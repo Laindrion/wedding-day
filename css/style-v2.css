@@ -636,8 +636,8 @@ section {
 
 @font-face {
    font-family: 'Miss Katherine';
-   src: local('/fonts/Miss Katherine'),
-      url('/fonts/Miss_Katherine-Script.otf') format('opentype');
+   src: local('../fonts/Miss Katherine'),
+      url('../fonts/Miss_Katherine-Script.otf') format('opentype');
    font-weight: normal;
    font-style: normal;
 }
