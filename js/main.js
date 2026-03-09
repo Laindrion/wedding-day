@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    /*** WEDDING DATE SECTION ***/
    // SET YOUR WEDDING DATE HERE (YYYY-MM-DDTHH:MM:SS)
-   const weddingDateDefault = new Date("2026-04-10T18:00:00").getTime();
+   const weddingDateDefault = new Date("2026-04-24T18:00:00").getTime();
    const weddingDateAz = new Date("2026-03-22T18:00:00").getTime();
 
    // Check if az page exists
