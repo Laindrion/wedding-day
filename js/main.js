@@ -213,28 +213,31 @@ document.addEventListener("DOMContentLoaded", () => {
    /* SUBMIT FORM */
    const form = document.getElementById("guest-form");
 
-   form.addEventListener("submit", (e) => {
+   form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const data = new FormData(form);
+      const formData = new FormData(form);
+      const body = new URLSearchParams(formData);
 
-      if (azPage) {
-         fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcFWvWGdsrKae_uDqJFNw3oJzeTtS-xfAuV31WWdodlSH2PA/formResponse", {
-            method: "POST",
-            body: data,
-            mode: "no-cors",
-         });
-      } else {
-         fetch("https://docs.google.com/forms/d/e/1FAIpQLSeOdvsMuTkubgBteVV_fT9BJI4hfabuWHsV8Rf_Ap10Kgrn8g/formResponse", {
-            method: "POST",
-            body: data,
-            mode: "no-cors",
-         });
+      try {
+         await fetch(
+            "https://docs.google.com/forms/d/e/1FAIpQLScrA07Iy6mYxF5tFGX8oog7KNQ61Nkn1sHHnM6XzcWhzjjI0A/formResponse",
+            {
+               method: "POST",
+               mode: "no-cors",
+               headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+               },
+               body: body.toString(),
+            }
+         );
+
+         form.reset();
+         alert("Спасибо! Ваш ответ отправлен.");
+      } catch (err) {
+         console.error("Ошибка отправки:", err);
+         alert("Не удалось отправить форму.");
       }
-
-      // With no-cors we can't read the response, so we show success immediately:
-      form.reset();
-      alert("Спасибо! Ваш ответ отправлен.");
    });
 });
 

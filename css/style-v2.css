@@ -81,6 +81,11 @@ section {
    margin: 0 auto;
 }
 
+p {
+   font-size: 17px;
+   font-weight: 500;
+}
+
 #sound-toggle {
    position: fixed;
    right: 15%;
@@ -312,7 +317,7 @@ section {
 /* HERO SECTION */
 
 .hero {
-   padding-top: 40px;
+   padding-top: 90px;
    min-height: 100vh;
 }
 
@@ -326,7 +331,7 @@ section {
    text-align: center;
 
    img {
-      max-width: 250px;
+      max-width: 550px;
       /* 350px */
       width: 100%;
       height: auto;
@@ -394,8 +399,8 @@ section {
 }
 
 .big-image-cover {
-   max-width: 100lvh;
-   height: 70lvh;
+   max-width: 260px;
+   height: 100%;
 
    padding: 0 15px;
 
