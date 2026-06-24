@@ -75,16 +75,32 @@ document.addEventListener("DOMContentLoaded", () => {
    const minutesEl = document.getElementById("minutes");
    const secondsEl = document.getElementById("seconds");
 
+   let timer = null;
+
+   function setCountdownZeros() {
+      if (daysEl) daysEl.textContent = "00";
+      if (hoursEl) hoursEl.textContent = "00";
+      if (minutesEl) minutesEl.textContent = "00";
+      if (secondsEl) secondsEl.textContent = "00";
+   }
+
    function updateCountdown() {
+      // If countdown HTML does not exist, stop safely
+      if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+         if (timer) clearInterval(timer);
+         return;
+      }
+
       const now = new Date().getTime();
       const distance = weddingDate - now;
 
       if (distance <= 0) {
-         daysEl.textContent = "00";
-         hoursEl.textContent = "00";
-         minutesEl.textContent = "00";
-         secondsEl.textContent = "00";
-         clearInterval(timer);
+         setCountdownZeros();
+
+         if (timer) {
+            clearInterval(timer);
+         }
+
          return;
       }
 
@@ -106,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
    }
 
    updateCountdown();
-   const timer = setInterval(updateCountdown, 1000);
+   timer = setInterval(updateCountdown, 1000);
 
    /* MOTION SECTION */
    if (!window.Motion) {
