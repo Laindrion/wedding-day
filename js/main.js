@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    /*** WEDDING DATE SECTION ***/
    // SET YOUR WEDDING DATE HERE (YYYY-MM-DDTHH:MM:SS)
-   const weddingDateDefault = new Date("2026-04-24T18:00:00").getTime();
+   const weddingDateDefault = new Date("2026-08-21T18:00:00").getTime();
    const weddingDateAz = new Date("2026-03-22T18:00:00").getTime();
 
    // Check if az page exists
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
          await fetch(
-            "https://docs.google.com/forms/d/e/1FAIpQLScrA07Iy6mYxF5tFGX8oog7KNQ61Nkn1sHHnM6XzcWhzjjI0A/formResponse",
+            "https://docs.google.com/forms/d/1lvhwzP8fEC5D6O2y_Roa0s9ZJa5e5IfAKkdYpshe8PA/formResponse",
             {
                method: "POST",
                mode: "no-cors",

@@ -331,7 +331,7 @@ p {
    text-align: center;
 
    img {
-      max-width: 550px;
+      max-width: 340px;
       /* 350px */
       width: 100%;
       height: auto;
@@ -399,7 +399,7 @@ p {
 }
 
 .big-image-cover {
-   max-width: 260px;
+   max-width: 460px;
    height: 100%;
 
    padding: 0 15px;
