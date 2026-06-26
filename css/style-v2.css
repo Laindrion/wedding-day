@@ -276,7 +276,7 @@ p {
       object-fit: cover;
       object-position: 0 -80px;
 
-      filter: saturate(0);
+      /* filter: saturate(0); */
    }
 }
 
