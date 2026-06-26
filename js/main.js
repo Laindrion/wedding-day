@@ -1,5 +1,46 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+   /* LOADER */
+   const percentEl = document.getElementById("load-percent");
+   let progress = 0;
+   let isLoaded = false;
+
+   function hideLoader() {
+      const loader = document.getElementById("loader");
+      if (!loader) return;
+
+      loader.style.opacity = "0";
+      loader.style.visibility = "hidden";
+
+      setTimeout(() => {
+         loader.remove();
+      }, 600);
+   }
+
+   function updateProgress() {
+      if (progress < 90 && !isLoaded) {
+         progress += Math.random() * 5; // smooth random growth
+         progress = Math.min(progress, 90);
+      } else if (isLoaded) {
+         progress += 2; // fast finish to 100
+      }
+
+      percentEl.textContent = Math.floor(progress);
+
+      if (progress < 100) {
+         requestAnimationFrame(updateProgress);
+      } else {
+         percentEl.textContent = 100;
+         hideLoader();
+      }
+   }
+
+   window.addEventListener("load", () => {
+      isLoaded = true;
+   });
+
+   updateProgress();
+
    /* INTRODUCTION SECTION */
    const introSection = document.querySelector(".introduction");
    const htmlElement = document.documentElement;
